@@ -13,10 +13,11 @@ defmodule MessengyrWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", MessengyrWeb do
+  scope "/m", MessengyrWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/test", PageController, :say_hello # Add this line!
   end
 
   # Other scopes may use custom stacks.
